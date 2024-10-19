@@ -63,6 +63,7 @@ a {
   align-items: center;
   color: #fff;
   text-align: center;
+  flex-direction: column;
 }
 
 .hero-section::before {
@@ -193,7 +194,7 @@ p {
   color: #fff;
 }
 
-/* Other Sections (Portfolio, Gallery) */
+/* Portfolio */
 .portfolio-section {
   padding: 50px 0;
   background-color: #000;
@@ -227,7 +228,7 @@ p {
 
 .view-more-container-portfolio { 
   display: flex;                    
-  justify-content: center;         /* Center the button horizontally */
+  justify-content: center;         
   margin-top: 20px;               /* Space above the button */
   margin-bottom: 20px;            /* Space below the button for visual balance */
 }
@@ -236,18 +237,17 @@ p {
   padding: 10px 20px;             
   margin: 30px auto;
   font-size: 1rem;                
-  color: white;                   /* Text color */
-  background-color: #32CD32;      /* Green background color */
-  border: none;                   /* No border */
-  border-radius: 5px;            /* Rounded corners */
-  cursor: pointer;                /* Pointer cursor on hover */
+  color: white;                   
+  background-color: #32CD32;      
+  border: none;                   
+  border-radius: 5px;            
+  cursor: pointer;                
   transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 #view-more-portfolio-btn:hover {
   background-color: #28a745;      /* Darker green on hover */
 }
-
 
 /* Gallery Section */
 .gallery-section {
@@ -259,7 +259,7 @@ p {
   text-align: center;
   font-size: 2.5rem;
   color: #32CD32; /* Lime Green */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 /* Gallery Container */
@@ -281,6 +281,7 @@ p {
 
 .gallery-item img {
   max-width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow around images */
   transition: transform 0.3s ease; /* Smooth hover effect */
@@ -316,14 +317,16 @@ p {
 
 @media (max-width: 768px) {
   .gallery-item {
-      flex: 1 1 100%; /* Full width on smaller screens */
+      flex: 1 1 100%; 
   }
-}
+} 
 
-#about, #portfolio, #gallery, #contact{
-  padding-top: 100px; /* Adjust the value based on the height of the hero or navbar */
+ #about ,#portfolio, #contact{
+  padding-top: 20px; 
 }
-
+#portfolio, #gallery{
+  padding-bottom: 10px;
+}
 /* Adjusting Spacing for Sections */
 .reel-section {
   padding-top: 30px; /* Decrease space on top */
@@ -340,7 +343,6 @@ p {
 .reel-section h2, .about-section h2 {
   margin-bottom: 20px; /* Reduce space under headings */
 }
-
 .reel-video {
   margin-bottom: 0; /* Ensure no extra space under the video */
 }
@@ -461,3 +463,68 @@ p {
       font-size: 1rem;
   }
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .hero-section h1 {
+    font-size: 3rem; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .portfolio-item {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width */
+  }
+
+  .nav-menu {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align to start */
+  }
+
+  h2 {
+    font-size: 2rem; /* Smaller headings */
+  }
+
+  p {
+    font-size: 1rem; /* Smaller paragraph text */
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1.5rem; /* Reduce button size */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Smaller font size */
+  }
+
+  .hero-content {
+    padding: 0 1rem; /* Add some padding for mobile */
+  }
+
+  .portfolio {
+    flex-direction: column; /* Stack portfolio items vertically on smaller screens */
+    align-items: center; /* Center align */
+  }
+
+  .portfolio-item {
+    margin-bottom: 20px; /* Space between items */
+  }
+
+  .gallery-item {
+    flex: 1 1 100%; /* Full width for images on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem; /* Further reduce heading size */
+  }
+
+  p {
+    font-size: 0.9rem; /* Further reduce paragraph text */
+  }
+}
+
